@@ -1,4 +1,3 @@
-export * from './max-by-properties-validator.decorator';
 export * from './is-not-exist-together';
 export * from './is-exist-together';
 export * from './is-target-exist-when-my-specified-values';

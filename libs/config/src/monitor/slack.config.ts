@@ -1,27 +1,24 @@
 import {
   InstanceValidator,
-  OptionalStringValidator,
   StringValidator,
-} from '@common';
+  StringValidatorOptional,
+} from '@app/common';
 
 export class SlackAlertOptions {
   @StringValidator()
   readonly webHooklUrl: string;
 
-  @OptionalStringValidator()
+  @StringValidatorOptional()
   readonly channelName?: string;
 
-  @OptionalStringValidator()
+  @StringValidatorOptional()
   readonly description?: string;
 
-  @OptionalStringValidator()
+  @StringValidatorOptional()
   readonly viewerUrl?: string;
 }
 
 export class SlackConfig {
   @InstanceValidator(SlackAlertOptions)
   readonly serverErrorAlert: SlackAlertOptions;
-
-  @InstanceValidator(SlackAlertOptions)
-  readonly sqsAlert: SlackAlertOptions;
 }

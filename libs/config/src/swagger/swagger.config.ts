@@ -1,4 +1,8 @@
-import { InstanceValidator, StringValidator } from '@app/common';
+import {
+  InstanceValidator,
+  InstanceValidatorOptional,
+  StringValidator,
+} from '@app/common';
 import {
   InfoObject,
   SecuritySchemeObject,
@@ -68,8 +72,8 @@ export class SwaggerOptions {
   @InstanceValidator(SwaggerInfo)
   info: SwaggerInfo;
 
-  @InstanceValidator(SwaggerSecurityConfig)
-  securityConfig: SwaggerSecurityConfig;
+  @InstanceValidatorOptional(SwaggerSecurityConfig)
+  securityConfig?: SwaggerSecurityConfig;
 }
 
 export class SwaggerConfig {

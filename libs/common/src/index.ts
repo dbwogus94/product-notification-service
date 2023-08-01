@@ -5,3 +5,4 @@ export * from './constant';
 export * from './swagger';
 export * from './decorator';
 export * from './slack';
+export * from './app';

@@ -19,7 +19,7 @@ type Options = UnionValidatorDefaultOptions & {
   min?: number;
 };
 
-export function integerValidator(
+export function IntValidator(
   options: Options = {},
   validationOptions?: ValidationOptions,
 ): PropertyDecorator {
