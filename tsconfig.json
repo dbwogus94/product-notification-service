@@ -12,10 +12,55 @@
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
+    "strict": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@apps/admin": [
+        "apps/admin/src"
+      ],
+      "@apps/admin/*": [
+        "apps/admin/src/*"
+      ],
+      "@apps/user": [
+        "apps/user/src"
+      ],
+      "@apps/user/*": [
+        "apps/user/src/*"
+      ],
+      "@apps/notification": [
+        "apps/notification/src"
+      ],
+      "@apps/notification/*": [
+        "apps/notification/src/*"
+      ],
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/common/*": [
+        "libs/common/src/*"
+      ],
+      "@app/config": [
+        "libs/config/src"
+      ],
+      "@app/config/*": [
+        "libs/config/src/*"
+      ],
+      "@app/custom": [
+        "libs/custom/src"
+      ],
+      "@app/custom/*": [
+        "libs/custom/src/*"
+      ],
+      "@app/entity": [
+        "libs/entity/src"
+      ],
+      "@app/entity/*": [
+        "libs/entity/src/*"
+      ]
+    }
   }
 }
