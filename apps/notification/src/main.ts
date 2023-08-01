@@ -1,8 +1,21 @@
-import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { NestBuilder } from '@app/common';
+import swaggerbuilder from './swagger/build-swagger-by-services';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  const builder = new NestBuilder();
+  const AppName = process.env.APP_NAME ?? 'User';
+  await builder.createNestApp(AppModule, AppName);
+
+  return process.env.NODE_ENV === 'production'
+    ? await builder //
+        .preInitServer({ globalPrifix: '/api' })
+        .setSentry()
+        .initServer()
+    : await builder
+        .preInitServer({ globalPrifix: '/api' })
+        .setDocs(swaggerbuilder, { basePatch: '/docs' })
+        .setSentry()
+        .initServer();
 }
 bootstrap();
